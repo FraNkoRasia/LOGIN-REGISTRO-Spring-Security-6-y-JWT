@@ -1,0 +1,961 @@
+/* PARA BUSCAR LAS PROPIEDADES DE CADA VISTA 
+   PRECIONE CTRL+F SI ESTAS USANDO VISUAL ESTUDIO CODE
+   E INGRESE LO SIGUIENTE PARA CADA VISTA DE ESTE PROYECTO 
+   
+   HOME,
+   NAVBAR.
+   REGISTRO
+   LOGIN
+   DASHBOARD
+   PERFIL
+   CONTACTO
+   LISTA DE USUARIOS (DENTRO ESTA EL MODAL MODIFICAR)
+   FORGOT PASSWORD
+   RESET PASSWORD
+   FORM EDIT PASSWORD
+   FOOTER
+   */
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html,
+body,
+#root {
+  background-image: url('Components/Imagenes/pc3.webp');
+  /* Ruta a tu imagen de fondo */
+  background-size: cover;
+  /* Ajusta la imagen para cubrir todo el elemento */
+  background-position: center;
+  /* Centra la imagen en el elemento */
+  background-repeat: no-repeat;
+  /* Evita que la imagen se repita */
+
+  /*background-color: rgb(255, 255, 255);*/
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  min-height: 100vh;
+  /* Asegura que el contenido ocupe al menos toda la altura de la ventana */
+}
+
+
+/* HOME */
+.userInfo {
+  justify-content: s;
+  width: 90%;
+  color: white;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.titulo-home {
+  color: white;
+}
+
+@media screen and (max-width: 768px) {
+  .userInfo {
+    font-size: 13px;
+  }
+}
+
+/* FIN HOME */
+
+
+/* NAVBAR */
+.flex {
+  display: flex;
+}
+
+.align-center {
+  align-items: center;
+  background: linear-gradient(rgb(29, 26, 32), rgba(138, 125, 145, 0.6));
+  height: 1.5cm;
+  box-shadow: 5px 5px 40px black;
+}
+
+.playcode {
+  margin-left: 20px;
+  transition: transform 0.4s ease;
+}
+
+.playcode:hover {
+  transform: scale(1.1);
+}
+
+/*nav desglogueado*/
+.nav-1 {
+
+  list-style: none;
+  gap: 10px;
+
+  /* QUITO EL SUBRAYADO DE LAS OPCIONES*/
+  .sin-subrayado {
+    text-decoration: none;
+    color: #030303;
+  }
+
+  .sin-subrayado:hover {
+    color: #7e85fa;
+  }
+}
+
+/*nav logueado*/
+.nav-2 {
+  margin: 0;
+  align-items: center;
+  list-style: none;
+  gap: 10px;
+  display: flex;
+
+
+  .sin-subrayado {
+    text-decoration: none;
+    color: #030303;
+
+    &:hover {
+      color: #7e85fa;
+    }
+  }
+}
+
+/*Menu desplegable PERFIL*/
+.dropdown-container {
+  position: relative;
+
+  .dropdown-menu {
+    width: 300%;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    background-color: rgba(104, 101, 106, 0.9);
+    box-shadow: 0px 0px 10px white;
+    border-radius: 5px;
+
+    li {
+      padding: 10px;
+
+      &:hover {
+        background-color: #2a2a2a;
+        border-radius: 5px;
+      }
+    }
+  }
+}
+
+.dropdown-menu li {
+  padding: 10px;
+  /* Ajusta el espacio interior de los elementos del menú según tu diseño */
+}
+
+.dropdown-menu li:hover {
+  background-color: #2a2a2a;
+  border-radius: 5px;
+  /* Cambia el color de fondo al pasar el ratón por encima */
+}
+
+/*Fin del menu desplegable PERFIL*/
+
+.cerrarSesionContainer {
+  margin-left: auto;
+  align-self: center;
+  margin-right: 20px;
+  list-style: none;
+}
+
+.cerrarSesion {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: #fff;
+  font-size: 16px;
+  padding: 10px 20px;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .celu-responsive {
+    flex-direction: column;
+    align-items: flex-start;
+
+    .cerrarSesionContainer {
+      margin-top: auto;
+    }
+  }
+
+  .nav-2 {
+    font-size: 13px;
+    padding: 0 0 0 20px;
+  }
+
+  li.cerrarSesionContainer {
+    margin-top: 0;
+  }
+
+  .cerrarSesion {
+    margin-bottom: 13px;
+    padding: 5px;
+    margin-left: 1px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: #fff;
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+  }
+
+  .flex {
+    flex-wrap: wrap;
+    justify-content: center;
+
+  }
+
+  .userInfo {
+    font-size: 13px;
+  }
+
+}
+
+/* FIN NAVBAR */
+
+/* REGISTRO */
+.formularioRegistro {
+  margin-top: 50px;
+  width: 70%;
+  /* Esto centra el formulario horizontalmente */
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  color: black;
+  background-color: #f9f9f9;
+  text-align: center;
+  /* Centra el contenido del formulario */
+}
+
+.contenedor-registro {
+  margin-bottom: 50px;
+
+}
+
+.input-pair #email {
+  display: block;
+  width: 100%;
+  /* Ajustado para que ocupe el ancho correcto */
+}
+
+.input-email {
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.nombre-apellido,
+.passwords,
+.documento-pais,
+.input-pair {
+  display: flex;
+  justify-content: space-between;
+}
+
+.input-pair {
+  flex-direction: column;
+  width: calc(50% - 5px);
+  /* Ajustado para ocupar el ancho completo con un espacio entre ellos */
+  margin-right: 10px;
+  /* Añade un margen entre los elementos */
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.input-pair:last-child {
+  margin-right: 0;
+  /* Elimina el margen del último par de entrada para evitar que se desborde */
+}
+
+.label {
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+button[type="submit"] {
+  background-color: #0077f6;
+  color: white;
+  padding: 14px 20px;
+  margin-top: 8px;
+  border: none;
+  border-radius: 7px;
+  cursor: pointer;
+  width: 50%;
+  transition: transform 0.4s ease;
+
+}
+
+button[type="submit"]:hover {
+  background-color: #45a049;
+  transform: scale(1.05);
+  box-shadow: 0px 3px 8px black;
+}
+
+.tienes-cuenta {
+  margin-bottom: 0;
+}
+
+/* MUESTRO ERROR CUANDO LA PASSWORD NO COINCIDE */
+.error-message {
+  width: 400px;
+  background-color: rgb(174, 5, 5);
+  /* Rojo con 50% de opacidad */
+  text-align: center;
+  color: white;
+  padding: 15px;
+  /* Ajusta el relleno según sea necesario */
+  margin-top: 30px;
+  /* Ajusta el margen superior para superponerse al contenido anterior */
+  border-radius: 10px;
+  /* Redondea los bordes */
+
+}
+
+.registration-message {
+  width: 400px;
+  text-align: center;
+  padding: 15px;
+  /* Ajusta el relleno según sea necesario */
+  margin-top: 30px;
+  /* Ajusta el margen superior para superponerse al contenido anterior */
+  border-radius: 10px;
+  /* Redondea los bordes */
+}
+
+.registration-message.success {
+  width: 400px;
+  margin-top: 30px;
+  background-color: lightgreen;
+  /* Cambia el color de fondo a verde para éxito */
+}
+
+.registration-message.error {
+  width: 400px;
+  margin-top: 30px;
+  background-color: rgb(155, 2, 2);
+  border: none;
+  color: white;
+  /* Cambia el color de fondo a rojo para error */
+}
+
+/* FIN REGISTRO */
+
+/* LOGIN */
+.formularioLogin {
+  width: 70%;
+  margin-top: 50px;
+  color: black;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+  text-align: center;
+  display: flex;
+  /* Usar flexbox para los elementos internos */
+  flex-direction: column;
+  /* Colocar los elementos en columna */
+  align-items: center;
+  /* Centrar los elementos horizontalmente */
+}
+
+.contenedor-login {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+  min-width: auto;
+  min-height: 0 auto;
+}
+
+.titulo {
+  margin-top: 10px;
+  /* Agrega espacio debajo del título */
+  margin-bottom: 30px;
+}
+
+.label-login {
+  text-align: left;
+  width: 100%;
+  /* Ocupar todo el ancho disponible */
+}
+
+.label-login label {
+  display: block;
+  /* Asegurar que las etiquetas estén en líneas separadas */
+}
+
+.label-login input {
+
+  padding: 10px;
+  margin-bottom: 15px;
+  /* Espacio entre los campos de entrada */
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.Olvidaste {
+  margin-top: 15px;
+  font-size: 15px;
+  font-family: Arial, Helvetica, sans-serif;
+
+}
+
+button[type="submit"] {
+  background-color: #0077f6;
+  color: white;
+  padding: 14px 20px;
+  border: none;
+  border-radius: 7px;
+  cursor: pointer;
+  width: calc(100% - 20px);
+  /* Ancho del botón teniendo en cuenta el padding */
+  transition: transform 0.4s ease;
+  box-shadow: 0px 3px 8px black;
+}
+
+button[type="submit"]:hover {
+  background-color: #45a049;
+  transform: scale(1.05);
+  box-shadow: 0px 3px 8px black;
+}
+
+/* FIN LOGIN */
+
+/* DASHBOARD*/
+
+.titulo-Welcome {
+  color: white;
+}
+
+/* FIN DASHBOARD */
+
+/* PERFIL */
+.perfil {
+  margin-top: 50px;
+  width: 70%;
+  /* Esto centra el formulario horizontalmente */
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+  text-align: left;
+  color: black;
+  /* Centra el contenido del formulario */
+}
+
+.botonPerfil {
+  text-align: center;
+  padding-top: 10px;
+}
+
+/* FIN PERFIL */
+
+/* CONTACTO */
+.titulo-contacto {
+  color: white;
+  text-align: center;
+}
+
+#labelcontacto {
+  color: white;
+}
+
+.botonContacto {
+  margin: 10px;
+}
+
+#succesmessage {
+  background-color: #438b04;
+  color: black;
+  padding: 15px;
+  text-align: center;
+  text-shadow: 0 0 10px white;
+  border-radius: 10px;
+}
+
+#errormessage {
+  background-color: #ef310b;
+  color: black;
+  padding: 15px;
+  text-align: center;
+  text-shadow: 0 0 10px white;
+  border-radius: 10px;
+}
+
+/* FIN CONTACTO */
+
+/* LISTA DE USUARIOS */
+.titulo-listaUsuario {
+  text-align: center;
+  color: white;
+}
+
+.user-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+table {
+  border-collapse: collapse;
+  width: 95%;
+  box-shadow: 0px 0px 30px white;
+}
+
+th,
+td {
+  border: 1px solid #030303;
+  padding: 5px 8px;
+  text-align: center;
+  max-width: 100%;
+  /* Ancho máximo para las celdas */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  /* Agregado para el caso de contenido largo */
+}
+
+th {
+  background-color: #272525;
+  color: white;
+}
+
+tr:nth-child(even) {
+  background-color: #8584d4;
+  /* Color para filas pares */
+  color: black;
+}
+
+tr:nth-child(odd) {
+  background-color: #c9cac8;
+  /* Color para filas impares */
+  color: black;
+}
+
+.btn-modificar,
+.btn-eliminar {
+  margin-right: 8px;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  box-shadow: 5px 5px 10px black;
+  transition: transform 0.4s ease;
+}
+
+.btn-modificar:hover,
+.btn-eliminar:hover,
+#btn-cancelar:hover {
+  transform: scale(1.1);
+}
+
+.btn-modificar {
+  background-color: #1d0dff;
+  color: rgb(255, 255, 255);
+}
+
+.btn-eliminar {
+  background-color: #ee0e1d;
+  color: rgb(255, 255, 255);
+}
+
+.btn-modificar:hover {
+  background-color: #438b04;
+}
+
+.btn-eliminar:hover,
+#btn-cancelar:hover {
+  background-color: #580202;
+}
+
+#btn-cancelar {
+  width: 95%;
+  background-color: red;
+  color: white;
+  margin: 10px;
+  padding: 14px 20px;
+  box-shadow: 0px 3px 8px black;
+  cursor: pointer;
+  transition: transform 0.4s ease;
+  border: none;
+}
+
+#btn-guardar {
+  width: 95%;
+  margin: 10px;
+}
+
+.titulo-editUser {
+  margin: 0;
+}
+
+.modal {
+  position: fixed;
+  margin-top: 300px;
+  border-radius: 2%;
+  align-items: center;
+  /* Centra los elementos horizontalmente */
+  background-color: white;
+  padding: 0 20px 20px;
+}
+
+#labelEdit {
+  margin: 0;
+}
+
+.input,
+select {
+  width: 100%;
+}
+
+#role {
+  text-align: center;
+  font-size: 16px;
+}
+
+select {
+  height: 40px;
+}
+
+@media screen and (max-width: 1040px) {
+  table {
+    width: 95%;
+    overflow-x: auto;
+  }
+
+  th,
+  td {
+    font-size: 13px;
+    white-space: nowrap;
+    max-width: none;
+    /* Eliminado el ancho máximo */
+  }
+}
+
+
+@media screen and (max-width: 960px) {
+
+  th,
+  td {
+    font-size: 11px;
+
+  }
+}
+
+
+
+@media (max-width: 768px) {
+
+
+  table {
+    width: 80%;
+    box-shadow: none;
+  }
+
+  table tr {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    padding: 10px;
+    margin-bottom: 1em;
+  }
+
+  table td[data-titulo] {
+    display: flex;
+  }
+
+  table td[data-titulo]::before {
+    align-content: center;
+    background-color: #030303;
+    color: white;
+    
+    content: attr(data-titulo);
+    font-weight: bold;
+    width: 90px;
+    text-align: center;
+    /* Opcional: añadir negrita al título */
+    margin-right: 3em;
+    padding-left: 3em;
+    padding-right: 3em;
+
+    /* Opcional: añadir espacio entre el título y el contenido */
+  }
+
+  table thead {
+    display: none;
+  }
+
+  td,
+  th {
+    border: 1px solid black;
+
+  }
+
+  th {
+    background-color: #272525;
+
+  }
+
+  td {
+    padding: 0;
+    margin-top: 5px;
+  }
+
+  .botones {
+    padding: 15px;
+    border: none;
+  }
+
+  .modal {
+    position: fixed;
+    width: 70%;
+    margin-top: 10px;
+    border-radius: 2%;
+    align-items: center;
+    /* Centra los elementos horizontalmente */
+    background-color: white;
+    padding: 0 20px 20px;
+  }
+}
+
+/* FIN LISTA DE USUARIOS */
+
+/* FORGOT PASSWORD */
+.Titulo-RestablecerContraseña {
+  padding-top: 10%;
+  color: white;
+}
+
+#colorwhite {
+  color: white;
+}
+
+form {
+  max-width: 400px;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+input[type="email"] {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+#boton {
+
+  display: block;
+  width: 100%;
+  padding: 12px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+#successMessage {
+  background-color: #438b04;
+  color: white;
+  padding: 15px;
+  text-align: center;
+  border-radius: 10px;
+}
+
+#errorMessage {
+  background-color: #8b0404;
+  color: white;
+  padding: 15px;
+  text-align: center;
+  border-radius: 10px;
+}
+
+/* FIN FORGOT PASSWORD */
+/* RESET PASSWORD */
+form {
+  margin-top: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+}
+
+.error {
+  width: 92%;
+  align-items: center;
+  background-color: rgba(255, 0, 0, 0.3);
+  /* Rojo con 50% de opacidad */
+  text-align: center;
+  padding: 15px;
+  /* Ajusta el relleno según sea necesario */
+
+  /* Ajusta el margen superior para superponerse al contenido anterior */
+  border-radius: 10px;
+  /* Redondea los bordes */
+  border: 1px solid rgba(233, 3, 3, 0.3);
+}
+
+/* FIN RESET PASSWORD */
+
+/* FORM EDIT PASSWORD */
+.formEditPassword {
+  margin-top: 50px;
+  width: 70%;
+  /* Esto centra el formulario horizontalmente */
+  padding: 20px;
+  color: black;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+  text-align: left;
+  /* Centra el contenido del formulario */
+}
+
+.botonEdit {
+  padding-top: 10px;
+  text-align: center;
+}
+
+/* FIN FORM EDIT PASSWORD */
+
+/* FOOTER */
+footer {
+  background: linear-gradient(rgba(138, 125, 145, 0.8), rgb(29, 26, 32));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 1%;
+  margin-top: auto;
+  /* Empuja el footer hacia abajo */
+  box-shadow: 5px 5px 40px black;
+}
+
+.redes img {
+  width: 150px;
+  transition: transform 0.4s ease;
+}
+
+.redes img:hover {
+  transform: scale(1.1);
+}
+
+.redes-container {
+  display: flex;
+}
+
+.redes-sociales {
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.copyright {
+  color: rgb(18, 17, 17);
+  margin: 8px 0px 10px 10px;
+  text-shadow: 0px 0px 10px rgb(255, 255, 255);
+  text-align: center;
+}
+
+/* FIN FOOTER */
+
+.container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+  align-items: center;
+  flex-direction: column;
+}
+
+.titulo-formulario {
+  margin: 0;
+  padding: 10px;
+}
+
+button {
+  border-radius: 8px;
+  /* border: 1px solid transparent; */
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+
+button:hover {
+  border-color: #646cff;
+}
+
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+
+  a:hover {
+    color: #747bff;
+  }
+
+  button {
+    background-color: #f9f9f9;
+  }
+}
