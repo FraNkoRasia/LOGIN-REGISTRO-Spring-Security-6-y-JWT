@@ -34,7 +34,6 @@ export default function Navbar({ user, setUser }) {
         // Representar contenido para usuarios no autenticados (sin cambios)
         return (
             <header>
-
                 <div className='flex align-center'>
                     <Link className='playcode' to="/">
                         <img src={logo} alt="Logo" style={{ width: '200px', height: 'auto' }} />

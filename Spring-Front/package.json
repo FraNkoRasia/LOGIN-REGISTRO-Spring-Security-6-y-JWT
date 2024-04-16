@@ -15,6 +15,7 @@
     "@fortawesome/react-fontawesome": "^0.2.0",
     "@tanstack/react-table": "^8.15.3",
     "axios": "^1.6.7",
+    "bootstrap": "^5.3.3",
     "jwt-decode": "^4.0.0",
     "particles.js": "^2.0.0",
     "react": "^18.2.0",

@@ -17,7 +17,7 @@
    */
 
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Roboto', sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
@@ -55,9 +55,10 @@ body,
 /* HOME */
 .userInfo {
   justify-content: s;
-  width: 90%;
+  width: 70%;
   color: white;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300; /* Peso de la fuente más ligero */
 }
 
 .titulo-home {
@@ -627,7 +628,7 @@ tr:nth-child(odd) {
 
 .modal {
   position: fixed;
-  margin-top: 300px;
+  margin-top: 400px;
   border-radius: 2%;
   align-items: center;
   /* Centra los elementos horizontalmente */
@@ -671,6 +672,8 @@ select {
 
 @media screen and (max-width: 960px) {
 
+
+
   th,
   td {
     font-size: 11px;
@@ -681,7 +684,6 @@ select {
 
 
 @media (max-width: 768px) {
-
 
   table {
     width: 80%;
@@ -704,7 +706,7 @@ select {
     align-content: center;
     background-color: #030303;
     color: white;
-    
+
     content: attr(data-titulo);
     font-weight: bold;
     width: 90px;
@@ -744,7 +746,6 @@ select {
 
   .modal {
     position: fixed;
-    width: 70%;
     margin-top: 10px;
     border-radius: 2%;
     align-items: center;
