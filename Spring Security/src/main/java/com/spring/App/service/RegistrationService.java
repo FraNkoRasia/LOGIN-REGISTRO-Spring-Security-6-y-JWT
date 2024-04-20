@@ -32,7 +32,7 @@ public class RegistrationService {
         request.setPassword(encryptedPassword);
 
         // Asignar el rol CUSTOMER al usuario
-        request.setRole(Role.CUSTOMER);
+        request.setRole(Role.USER);
 
         // Guardar el usuario en la base de datos
         userRepository.save(request);

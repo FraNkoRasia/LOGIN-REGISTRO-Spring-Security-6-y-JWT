@@ -18,17 +18,16 @@
 
 :root {
   font-family: 'Roboto', sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+  /* font-weight: 400; */
 
-  color-scheme: light dark;
+  /* color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  background-color: #242424; */
 
   font-synthesis: none;
-  text-rendering: optimizeLegibility;
+  /* text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  -moz-osx-font-smoothing: grayscale; */
 }
 
 html,
@@ -58,18 +57,15 @@ body,
   width: 70%;
   color: white;
   font-family: 'Roboto', sans-serif;
-  font-weight: 300; /* Peso de la fuente más ligero */
+  font-weight: 300;
+  /* Peso de la fuente más ligero */
 }
 
 .titulo-home {
   color: white;
 }
 
-@media screen and (max-width: 768px) {
-  .userInfo {
-    font-size: 13px;
-  }
-}
+
 
 /* FIN HOME */
 
@@ -79,6 +75,22 @@ body,
   display: flex;
 }
 
+.titPlay {
+  flex-wrap: nowrap;
+  font-family: "Saira Stencil One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: black;
+  font-size: 40px;
+  margin: 0 0 0 25px;
+  text-decoration: none;
+  transition: transform 0.4s ease;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
 .align-center {
   align-items: center;
   background: linear-gradient(rgb(29, 26, 32), rgba(138, 125, 145, 0.6));
@@ -86,14 +98,7 @@ body,
   box-shadow: 5px 5px 40px black;
 }
 
-.playcode {
-  margin-left: 20px;
-  transition: transform 0.4s ease;
-}
 
-.playcode:hover {
-  transform: scale(1.1);
-}
 
 /*nav desglogueado*/
 .nav-1 {
@@ -130,6 +135,8 @@ body,
     }
   }
 }
+
+
 
 /*Menu desplegable PERFIL*/
 .dropdown-container {
@@ -194,6 +201,7 @@ body,
 }
 
 @media screen and (max-width: 768px) {
+  
   .celu-responsive {
     flex-direction: column;
     align-items: flex-start;
@@ -227,14 +235,21 @@ body,
     }
   }
 
+  .titPlay {
+    font-size: 30px;
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+  }
+
   .flex {
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
     justify-content: center;
 
   }
 
   .userInfo {
-    font-size: 13px;
+    font-size: 15px;
   }
 
 }
@@ -242,9 +257,11 @@ body,
 /* FIN NAVBAR */
 
 /* REGISTRO */
+
 .formularioRegistro {
   margin-top: 50px;
-  width: 70%;
+  margin-bottom: 50px;
+  width: 80%;
   /* Esto centra el formulario horizontalmente */
   padding: 20px;
   border: 1px solid #ccc;
@@ -253,11 +270,6 @@ body,
   background-color: #f9f9f9;
   text-align: center;
   /* Centra el contenido del formulario */
-}
-
-.contenedor-registro {
-  margin-bottom: 50px;
-
 }
 
 .input-pair #email {
@@ -379,8 +391,9 @@ button[type="submit"]:hover {
 
 /* LOGIN */
 .formularioLogin {
-  width: 70%;
+  width: 80%;
   margin-top: 50px;
+  margin-bottom: 50px;
   color: black;
   padding: 20px;
   border: 1px solid #ccc;
@@ -393,6 +406,13 @@ button[type="submit"]:hover {
   /* Colocar los elementos en columna */
   align-items: center;
   /* Centrar los elementos horizontalmente */
+}
+
+@media screen and (max-width: 412px) {
+  .contenedor-login {
+    width: 100%;
+
+  }
 }
 
 .contenedor-login {
@@ -470,7 +490,7 @@ button[type="submit"]:hover {
 /* PERFIL */
 .perfil {
   margin-top: 50px;
-  width: 70%;
+  width: 80%;
   /* Esto centra el formulario horizontalmente */
   padding: 20px;
   border: 1px solid #ccc;
@@ -489,6 +509,14 @@ button[type="submit"]:hover {
 /* FIN PERFIL */
 
 /* CONTACTO */
+.contenedorContacto {
+  align-items: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  width: 90%;
+
+}
+
 .titulo-contacto {
   color: white;
   text-align: center;
@@ -855,7 +883,7 @@ input[type="password"] {
 /* FORM EDIT PASSWORD */
 .formEditPassword {
   margin-top: 50px;
-  width: 70%;
+  width: 80%;
   /* Esto centra el formulario horizontalmente */
   padding: 20px;
   color: black;

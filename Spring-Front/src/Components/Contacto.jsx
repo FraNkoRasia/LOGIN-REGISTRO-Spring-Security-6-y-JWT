@@ -51,7 +51,7 @@ const ContactForm = () => {
         <div>
             <h1 className='titulo-contacto'>Contacta con Nosotros</h1>
 
-            <form onSubmit={handleFormSubmit}>
+            <form className='contenedorContacto' onSubmit={handleFormSubmit}>
                 <label id="labelcontacto" htmlFor="name" >Nombre: </label>
                 <input type="text" name="name" placeholder="Your Name" value={formData.name} onChange={handleFormChange} />
                 <label id="labelcontacto" htmlFor="Email" >Email: </label>

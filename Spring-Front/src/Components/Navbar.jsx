@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import logo from '../Components/Imagenes/letra 2.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleUp, faAngleDown } from '@fortawesome/free-solid-svg-icons'
 
@@ -35,8 +34,8 @@ export default function Navbar({ user, setUser }) {
         return (
             <header>
                 <div className='flex align-center'>
-                    <Link className='playcode' to="/">
-                        <img src={logo} alt="Logo" style={{ width: '200px', height: 'auto' }} />
+                    <Link className='titPlay' to="/">
+                        <p>PLAY CODE</p>
                     </Link>
                     <nav>
                         <ul className='flex nav-1'>
@@ -60,8 +59,8 @@ export default function Navbar({ user, setUser }) {
         return (
             <header>
                 <div className='flex align-center celu-responsive'>
-                    <Link className='playcode' to="/">
-                        <img src={logo} alt="Logo" style={{ width: '200px', height: 'auto' }} />
+                    <Link className='titPlay' to="/">
+                        <p>PLAY CODE</p>
                     </Link>
 
                     <nav>
