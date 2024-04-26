@@ -16,13 +16,14 @@ export default function Navbar({ user, setUser }) {
                 setMenuOpen(false);
             }
         };
-
+    
         document.addEventListener('click', closeDropdowns);
-
+    
         return () => {
             document.removeEventListener('click', closeDropdowns);
         };
-    }, []);
+    }, [isProfileDropdownOpen]); // Agrega isProfileDropdownOpen como dependencia
+    
 
     const toggleMenu = () => {
         setMenuOpen(!menuOpen);
@@ -42,7 +43,6 @@ export default function Navbar({ user, setUser }) {
         // Representar contenido para usuarios no autenticados (sin cambios)
         return (
             <header className="header">
-
                 <Link className='titPlay' to="/">
                     <p>PLAY CODE</p>
                 </Link>
@@ -59,7 +59,6 @@ export default function Navbar({ user, setUser }) {
                         <li><Link to="/contacto" className="nav-list-color">CONTACTO</Link></li>
                     </ul>
                 </nav>
-
             </header>
         );
     } else {
@@ -71,7 +70,6 @@ export default function Navbar({ user, setUser }) {
 
         return (
             <header className="header">
-
                 <Link className='titPlay' to="/">
                     <p>PLAY CODE</p>
                 </Link>
@@ -106,17 +104,13 @@ export default function Navbar({ user, setUser }) {
                         </li>
 
                         <li><Link to="/contacto" className="nav-list-color">CONTACTO</Link></li>
-                        <li className="cerrarSesionContainer">
-                            <button className="cerrarSesion" onClick={handleLogout}>
+                        <li>
+                            <button className='cerrarSesion' onClick={handleLogout}>
                                 Cerrar Sesión
                             </button>
                         </li>
                     </ul>
-
                 </nav>
-
-
-
             </header >
         );
     }
