@@ -16,14 +16,14 @@ export default function Navbar({ user, setUser }) {
                 setMenuOpen(false);
             }
         };
-    
+
         document.addEventListener('click', closeDropdowns);
-    
+
         return () => {
             document.removeEventListener('click', closeDropdowns);
         };
     }, [isProfileDropdownOpen]); // Agrega isProfileDropdownOpen como dependencia
-    
+
 
     const toggleMenu = () => {
         setMenuOpen(!menuOpen);
@@ -43,22 +43,24 @@ export default function Navbar({ user, setUser }) {
         // Representar contenido para usuarios no autenticados (sin cambios)
         return (
             <header className="header">
-                <Link className='titPlay' to="/">
-                    <p>PLAY CODE</p>
-                </Link>
-                <button id="abrir" className="abrir-menu" onClick={toggleMenu}>
-                    {menuOpen ? <i className="bi bi-x"></i> : <i className="bi bi-list"></i>}
-                </button>
-                <nav id="nav" className={`nav ${menuOpen ? "visible" : ""}`}>
-                    <button className="cerrar-menu" id="cerrar" onClick={toggleMenu}>
-                        <i className="bi bi-x"></i>
+                <div>
+                    <Link className='titPlay' to="/">
+                        <p>PLAY CODE</p>
+                    </Link>
+                    <button id="abrir" className="abrir-menu" onClick={toggleMenu}>
+                        {menuOpen ? <i className="bi bi-x"></i> : <i className="bi bi-list"></i>}
                     </button>
-                    <ul className="nav-list">
-                        <li><Link to="/login" className="nav-list-color">LOGIN</Link></li>
-                        <li><Link to="/registro" className="nav-list-color">REGISTRO</Link></li>
-                        <li><Link to="/contacto" className="nav-list-color">CONTACTO</Link></li>
-                    </ul>
-                </nav>
+                    <nav id="nav" className={`nav ${menuOpen ? "visible" : ""}`}>
+                        <button className="cerrar-menu" id="cerrar" onClick={toggleMenu}>
+                            <i className="bi bi-x"></i>
+                        </button>
+                        <ul className="nav-list">
+                            <li><Link to="/login" className="nav-list-color">LOGIN</Link></li>
+                            <li><Link to="/registro" className="nav-list-color">REGISTRO</Link></li>
+                            <li><Link to="/contacto" className="nav-list-color">CONTACTO</Link></li>
+                        </ul>
+                    </nav>
+                </div>
             </header>
         );
     } else {

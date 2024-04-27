@@ -127,11 +127,12 @@ header {
 }
 
 .dropdown-menu {
-  background-color: #454647;
+  background: rgb(84, 76, 92);
   position: fixed;
   font-size: 16px;
   list-style: none;
   padding: 0;
+  border-radius: 5px;
 }
 
 .dropdown-menu li {
@@ -140,8 +141,8 @@ header {
 }
 
 .dropdown-menu li:hover {
-  background-color: #6f6d6d;
-  border-radius: 5px;
+  background-color: rgb(58, 42, 58);
+    border-radius: 5px;
 }
 
 /* Fin del menú desplegable PERFIL */
@@ -390,6 +391,7 @@ button[type="submit"]:hover {
 
 .titulo-Welcome {
   color: white;
+  text-align: center;
 }
 
 /* FIN DASHBOARD */
@@ -976,7 +978,6 @@ button:focus-visible {
 
 @media screen and (max-width: 850px) {
 
-
   .abrir-menu,
   .cerrar-menu {
     display: block;
@@ -993,6 +994,7 @@ button:focus-visible {
 
   .abrir-menu {
     color: #1c1c1c;
+    
   }
 
   .cerrar-menu {
@@ -1009,26 +1011,30 @@ button:focus-visible {
     position: absolute;
     top: 0;
     right: 0;
-    bottom: 0;
     background-color: #1c1c1c;
     padding: 2rem;
     box-shadow: 0 0 0 100vmax rgba(0, 0, 0, .5);
   }
 
   .nav.visible {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
     opacity: 1;
     visibility: visible;
+    
   }
 
   nav#nav.nav.visible {
-    width: 200px;
-    padding: 20px 0px 0 0;
+    width: 100%;
+    padding: 20px 30px 0 0;
+    
   }
 
   .nav-list {
     flex-direction: column;
     align-items: start;
-    padding: 0 0 0 20px;
+ margin: 10px 30px ;
   }
 
   .nav-list li a {
@@ -1038,9 +1044,11 @@ button:focus-visible {
   /* Menu desplegable PERFIL */
   .dropdown-container {
     position: relative;
+    
   }
 
   .dropdown-menu {
+    background-color: transparent;
     position: relative;
     font-size: 16px;
     list-style: none;
@@ -1061,7 +1069,7 @@ button:focus-visible {
 }
 
 .cerrarSesion {
-  margin-bottom: 13px;
+  
   padding: 5px;
   margin-left: -5px;
   background-color: transparent;
