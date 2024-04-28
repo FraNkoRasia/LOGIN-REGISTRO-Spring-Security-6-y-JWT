@@ -25,11 +25,6 @@
   font-synthesis: none;
 }
 
-
-
-
-
-
 html,
 body,
 #root {
@@ -41,8 +36,6 @@ body,
   /* Centra la imagen en el elemento */
   background-repeat: no-repeat;
   /* Evita que la imagen se repita */
-
-  /*background-color: rgb(255, 255, 255);*/
   display: flex;
   flex-direction: column;
   margin: 0;
@@ -65,8 +58,6 @@ body,
   color: white;
 }
 
-
-
 /* FIN HOME */
 
 
@@ -75,7 +66,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 2rem;
+  padding: 0 30px 0 0;
   background-color: #ececec;
   align-items: center;
   background: linear-gradient(rgb(29, 26, 32), rgba(138, 125, 145, 0.6));
@@ -88,7 +79,7 @@ header {
   font-family: "Saira Stencil One", sans-serif;
   font-weight: 400;
   font-style: normal;
-  color: black;
+  color: rgb(255, 255, 255);
   font-size: 40px;
   margin: 0 0 0 25px;
   text-decoration: none;
@@ -99,14 +90,17 @@ header {
   }
 }
 
+.titPlayHamburguesa {
+  display: none;
+  /* el titulo se esconde cuando no existe el boton hamburguesa */
+}
+
 .nav-list-color {
   text-decoration: none;
   color: #030303;
 }
 
-.nav-list-color:hover {
-  color: #7e85fa;
-}
+
 
 .nav-list {
   list-style-type: none;
@@ -114,6 +108,12 @@ header {
   gap: 1rem;
   align-items: center;
   /* Alineación vertical de las opciones del menú */
+}
+
+ul.nav-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .abrir-menu,
@@ -142,31 +142,19 @@ header {
 
 .dropdown-menu li:hover {
   background-color: rgb(58, 42, 58);
-    border-radius: 5px;
+  border-radius: 5px;
 }
 
 /* Fin del menú desplegable PERFIL */
-
-
-
 .cerrarSesion {
-
-  padding: 5px;
-  margin-left: 1px;
+  color: white;
   background-color: transparent;
-  border: none;
-  cursor: pointer;
-  color: #fff;
-  transition: background-color 0.3s;
-
-  &:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-  }
 }
 
 .cerrarSesion:hover {
   color: #7e85fa;
 }
+
 
 /* FIN NAVBAR */
 
@@ -795,10 +783,7 @@ button:focus-visible {
   }
 }
 
-
 @media screen and (max-width: 960px) {
-
-
 
   th,
   td {
@@ -810,56 +795,11 @@ button:focus-visible {
 
 @media screen and (max-width: 768px) {
 
-  .celu-responsive {
-    flex-direction: column;
-    align-items: flex-start;
-
-    .cerrarSesionContainer {
-      margin-top: auto;
-    }
-  }
-
-  .nav-2 {
-    font-size: 13px;
-    padding: 0 0 0 20px;
-  }
-
-  li.cerrarSesionContainer {
-    margin-top: 0;
-  }
-
-  .cerrarSesion {
-    margin-bottom: 13px;
-    padding: 5px;
-    margin-left: -5px;
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    color: #fff;
-    transition: background-color 0.3s;
-
-    &:hover {
-      background-color: rgba(255, 255, 255, 0.1);
-    }
-  }
-
-  .titPlay {
-    font-size: 30px;
-    padding: 0;
-    margin: 0;
-    text-decoration: none;
-  }
-
-  .flex {
-    /* flex-wrap: wrap; */
-    justify-content: center;
-
-  }
-
   .userInfo {
     font-size: 15px;
   }
 
+  /* TABLA RESPONSIVA DE USUARIOS */
   table {
     width: 80%;
     box-shadow: none;
@@ -917,6 +857,7 @@ button:focus-visible {
   .botones {
     padding: 15px;
     border: none;
+    font-size: 14px;
   }
 
   .modal {
@@ -928,55 +869,26 @@ button:focus-visible {
     background-color: white;
     padding: 0 20px 20px;
   }
-}
 
-@media screen and (max-width: 430px) {
-  .contenedor-login {
-    width: 100%;
+  /* FIN TABLA RESPONSIVA DE USUARIOS */
+
+  /* BOTON HAMBURGUESA RESPONSIVA PARA CELULARES Y TABLETS */
+  .titPlayHamburguesa {
+    display: flex;
+    font-family: "Saira Stencil One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: black;
+    font-size: 40px;
+    margin: 0;
+    color: white;
+    text-decoration: none;
+    transition: transform 0.4s ease;
+
+    &:hover {
+      transform: scale(1.1);
+    }
   }
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-
-  a:hover {
-    color: #747bff;
-  }
-
-  button {
-    background-color: #f9f9f9;
-  }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-@media screen and (max-width: 850px) {
 
   .abrir-menu,
   .cerrar-menu {
@@ -994,7 +906,7 @@ button:focus-visible {
 
   .abrir-menu {
     color: #1c1c1c;
-    
+
   }
 
   .cerrar-menu {
@@ -1022,29 +934,34 @@ button:focus-visible {
     justify-content: space-between;
     opacity: 1;
     visibility: visible;
-    
+
   }
 
   nav#nav.nav.visible {
     width: 100%;
     padding: 20px 30px 0 0;
-    
+
   }
 
-  .nav-list {
-    flex-direction: column;
-    align-items: start;
- margin: 10px 30px ;
+  .nav-list-color:hover {
+    color: #7e85fa;
   }
 
   .nav-list li a {
     color: #ecececec;
   }
 
+  ul.nav-list {
+    flex-direction: column;
+    align-items: start;
+    padding: 0 30px;
+    margin: -10px 30px 20px;
+  }
+
   /* Menu desplegable PERFIL */
   .dropdown-container {
     position: relative;
-    
+
   }
 
   .dropdown-menu {
@@ -1066,19 +983,5 @@ button:focus-visible {
   }
 
   /* Fin del menú desplegable PERFIL */
-}
-
-.cerrarSesion {
-  
-  padding: 5px;
-  margin-left: -5px;
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-  color: #fff;
-  transition: background-color 0.3s;
-
-  &:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-  }
+  /* FIN CSS - BOTON HAMBURGUESA RESPONSIVA PARA CELULARES Y TABLETS */
 }
